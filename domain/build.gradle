@@ -1,0 +1,41 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+
+        versionCode rootProject.ext.appVersionCode
+        versionName rootProject.ext.appVersionName
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    api project(':analytic')
+    def domainDependencies = rootProject.ext.domainDependencies
+    kapt domainDependencies.daggerCompiler
+    implementation domainDependencies.dagger
+
+    implementation domainDependencies.rxPermissions
+
+    implementation domainDependencies.kotlin
+    implementation domainDependencies.timber
+    implementation domainDependencies.rxJava
+    implementation domainDependencies.rxAndroid
+    implementation domainDependencies.rxKotlin
+    implementation domainDependencies.okHttp
+    implementation domainDependencies.javaxInject
+}

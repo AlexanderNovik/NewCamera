@@ -1,0 +1,56 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+ext {
+    appVersionCode = Integer.valueOf(new Date().format('yyMMddHHmm'))
+    appVersionName = "0.0.${appVersionCode}"
+}
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    defaultConfig {
+        applicationId rootProject.ext.applicationId
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+
+        versionCode appVersionCode
+        versionName appVersionName
+        testApplicationId "com.camera3.test"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    def uiDependencies = rootProject.ext.uiDependencies
+
+    implementation project(':presentation')
+
+    implementation uiDependencies.kotlin
+    // di
+    kapt uiDependencies.daggerCompiler
+    kapt uiDependencies.daggerProcessor
+    implementation uiDependencies.dagger
+    implementation uiDependencies.daggerSupport
+    // rx
+    implementation uiDependencies.rxJava
+    implementation uiDependencies.rxAndroid
+    implementation uiDependencies.rxKotlin
+    // support
+    implementation uiDependencies.appCompat
+    implementation uiDependencies.design
+    // logging
+    implementation uiDependencies.timber
+    // permissions
+    implementation uiDependencies.rxPermissions
+    // constraint
+    implementation uiDependencies.constraint
+}

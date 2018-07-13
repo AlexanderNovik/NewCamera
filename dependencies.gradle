@@ -1,0 +1,114 @@
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url "https://jitpack.io" }
+        maven { url 'https://maven.fabric.io/public' }
+    }
+}
+
+ext {
+    // di
+    daggerVersion = '2.11'
+    // rx
+    rxJavaVersion = '2.1.14'
+    rxKotlinVersion = '2.1.0'
+    rxAndroidVersion = '2.0.2'
+    // support
+    supportVersion = "27.1.1"
+    // logging
+    timberVersion = "4.6.0"
+    // permissions
+    rxPermissionsVersion = '0.9.5@aar'
+    // glide
+    glideVersion = '3.7.0'
+    // retrofit/okhttp3
+    okhttpVersion = '3.9.1'
+    retrofitVersion = '2.4.0'
+    javaInjectVersion = '1'
+    gsonVersion = '2.8.4'
+    // analytics
+    amplitudeVersion = '2.18.1'
+    appsflyerVersion = '4.8.12@aar'
+    facebookVersion = '4.33.0'
+
+    //tests
+    androidTestVersion = '0.5'
+
+    uiDependencies = [
+            daggerCompiler : "com.google.dagger:dagger-compiler:$daggerVersion",
+            dagger         : "com.google.dagger:dagger:$daggerVersion",
+            daggerSupport  : "com.google.dagger:dagger-android-support:${daggerVersion}",
+            daggerProcessor: "com.google.dagger:dagger-android-processor:${daggerVersion}",
+            rxJava         : "io.reactivex.rxjava2:rxjava:$rxJavaVersion",
+            rxAndroid      : "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion",
+            rxKotlin       : "io.reactivex.rxjava2:rxkotlin:$rxKotlinVersion",
+            appCompat      : "com.android.support:appcompat-v7:$supportVersion",
+            design         : "com.android.support:design:$supportVersion",
+            timber         : "com.jakewharton.timber:timber:$timberVersion",
+            rxPermissions  : "com.tbruyelle.rxpermissions2:rxpermissions:$rxPermissionsVersion",
+            constraint     : 'com.android.support.constraint:constraint-layout:1.1.0',
+            javaxInject    : "javax.inject:javax.inject:$javaInjectVersion",
+            kotlin         : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    ]
+
+    presentationDependencies = [
+            daggerCompiler : "com.google.dagger:dagger-compiler:$daggerVersion",
+            dagger         : "com.google.dagger:dagger:$daggerVersion",
+            rxJava         : "io.reactivex.rxjava2:rxjava:$rxJavaVersion",
+            rxAndroid      : "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion",
+            rxKotlin       : "io.reactivex.rxjava2:rxkotlin:$rxKotlinVersion",
+            appCompat      : "com.android.support:appcompat-v7:$supportVersion",
+            design         : "com.android.support:design:$supportVersion",
+            timber         : "com.jakewharton.timber:timber:$timberVersion",
+            rxPermissions  : "com.tbruyelle.rxpermissions2:rxpermissions:$rxPermissionsVersion",
+            constraint     : 'com.android.support.constraint:constraint-layout:1.1.0',
+            glide          : "com.github.bumptech.glide:glide:$glideVersion",
+            javaxInject    : "javax.inject:javax.inject:$javaInjectVersion",
+            kotlin         : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    ]
+
+    domainDependencies = [
+            daggerCompiler: "com.google.dagger:dagger-compiler:$daggerVersion",
+            dagger        : "com.google.dagger:dagger:$daggerVersion",
+            rxPermissions : "com.tbruyelle.rxpermissions2:rxpermissions:$rxPermissionsVersion",
+            javaxInject   : "javax.inject:javax.inject:$javaInjectVersion",
+            kotlin        : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version",
+            rxJava        : "io.reactivex.rxjava2:rxjava:$rxJavaVersion",
+            rxAndroid     : "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion",
+            rxKotlin      : "io.reactivex.rxjava2:rxkotlin:$rxKotlinVersion",
+            okHttp        : "com.squareup.okhttp3:okhttp:$okhttpVersion",
+            timber        : "com.jakewharton.timber:timber:$timberVersion"
+    ]
+
+    dataDependencies = [
+            retrofit       : "com.squareup.retrofit2:retrofit:$retrofitVersion",
+            kotlin         : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version",
+            rxJava         : "io.reactivex.rxjava2:rxjava:$rxJavaVersion",
+            rxAndroid      : "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion",
+            timber         : "com.jakewharton.timber:timber:$timberVersion",
+            javaxInject    : "javax.inject:javax.inject:$javaInjectVersion",
+            okHttp         : "com.squareup.okhttp3:okhttp:$okhttpVersion",
+            retrofitAdapter: "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion",
+            gson           : "com.google.code.gson:gson:$gsonVersion",
+            gsonConverter  : "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    ]
+
+    coreDependencies = [
+            kotlin: "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    ]
+
+    analyticsDependencies = [
+            kotlin     : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version",
+            amplitude  : "com.amplitude:android-sdk:$amplitudeVersion",
+            appsflyer  : "com.appsflyer:af-android-sdk:$appsflyerVersion",
+            facebook   : "com.facebook.android:facebook-android-sdk:$facebookVersion",
+            javaxInject: "javax.inject:javax.inject:$javaInjectVersion"
+    ]
+
+    testDependencies = [
+            okHttpMockWebServer: "com.squareup.okhttp3:mockwebserver:$okhttpVersion",
+            supportAnnotations : "com.android.support:support-annotations:$supportVersion",
+            testRunner         : "com.android.support.test:runner:$androidTestVersion",
+    ]
+}
