@@ -10,7 +10,7 @@ import javax.inject.Inject
 interface AnalyticsAppsFlyer : AnalyticsExternal {
 
     class Impl @Inject constructor(private val application: Application,
-                                   private val keyProvider: AppsflyerKeyProvider) : AnalyticsAppsFlyer {
+                                   private val key: String) : AnalyticsAppsFlyer {
         private var initialized: Boolean = false
 
         override fun optIn() {
@@ -37,7 +37,7 @@ interface AnalyticsAppsFlyer : AnalyticsExternal {
 
         private fun initialize() {
             if (!initialized) {
-                AppsFlyerLib.getInstance().init(keyProvider.getKey(), null, application)
+                AppsFlyerLib.getInstance().init(key, null, application)
                 AppsFlyerLib.getInstance().startTracking(application)
                 initialized = true
             }

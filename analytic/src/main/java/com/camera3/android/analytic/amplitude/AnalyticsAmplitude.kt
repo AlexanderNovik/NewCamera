@@ -12,7 +12,7 @@ interface AnalyticsAmplitude : AnalyticsExternal {
 
     class Impl @Inject constructor(
             private val application: Application,
-            private val keyProvider: AmplitudeKeyProvider) : AnalyticsAmplitude {
+            private val key: String) : AnalyticsAmplitude {
 
         private var initialized: Boolean = false
 
@@ -44,7 +44,7 @@ interface AnalyticsAmplitude : AnalyticsExternal {
             if (!initialized) {
                 Amplitude.getInstance()
                         .useAdvertisingIdForDeviceId()
-                        .initialize(application, keyProvider.getKey())
+                        .initialize(application, key)
                         .enableForegroundTracking(application)
                 initialized = true
             }
