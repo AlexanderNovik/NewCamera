@@ -21,4 +21,8 @@ class MainActivity : AppCompatActivity() {
         super.onStart()
         presenter.start()
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+    }
 }

@@ -25,7 +25,7 @@ android {
 dependencies {
     def presentationDependencies = rootProject.ext.presentationDependencies
 
-    api project(':domain')
+    implementation project(':domain')
 
     implementation presentationDependencies.kotlin
     // di

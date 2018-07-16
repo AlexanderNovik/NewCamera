@@ -1,6 +1,7 @@
 package com.camera3.android.application.di
 
 import com.camera3.android.domain.interaction.analytics.SendAppStartEvent
+import com.camera3.android.presentation.MainPresenterImpl
 import com.camera3.android.presentation.main.MainPresenter
 import dagger.Module
 import dagger.Provides
@@ -16,6 +17,6 @@ open class MainActivityModule {
             sendAppStartEvent: SendAppStartEvent,
             @Named("jobScheduler") jobScheduler: Scheduler,
             @Named("uiScheduler") uiScheduler: Scheduler
-    ): MainPresenter = MainPresenter.Impl(jobScheduler, uiScheduler, sendAppStartEvent)
+    ): MainPresenter = MainPresenterImpl(jobScheduler, uiScheduler, sendAppStartEvent)
 
 }

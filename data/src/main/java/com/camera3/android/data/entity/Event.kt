@@ -1,4 +1,4 @@
-package com.camera3.android.domain.interaction.analytics
+package com.camera3.android.data.entity
 
 import com.camera3.android.analytic.base.AnalyticsEvent
 

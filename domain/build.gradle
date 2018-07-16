@@ -24,7 +24,6 @@ android {
 }
 
 dependencies {
-    api project(':analytic')
     def domainDependencies = rootProject.ext.domainDependencies
     kapt domainDependencies.daggerCompiler
     implementation domainDependencies.dagger
@@ -36,6 +35,5 @@ dependencies {
     implementation domainDependencies.rxJava
     implementation domainDependencies.rxAndroid
     implementation domainDependencies.rxKotlin
-    implementation domainDependencies.okHttp
     implementation domainDependencies.javaxInject
 }

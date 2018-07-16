@@ -77,7 +77,6 @@ ext {
             rxJava        : "io.reactivex.rxjava2:rxjava:$rxJavaVersion",
             rxAndroid     : "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion",
             rxKotlin      : "io.reactivex.rxjava2:rxkotlin:$rxKotlinVersion",
-            okHttp        : "com.squareup.okhttp3:okhttp:$okhttpVersion",
             timber        : "com.jakewharton.timber:timber:$timberVersion"
     ]
 

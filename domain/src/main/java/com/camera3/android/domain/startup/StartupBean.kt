@@ -1,4 +1,4 @@
-package com.camera3.android.core
+package com.camera3.android.domain.startup
 
 interface StartupBean {
     fun init()

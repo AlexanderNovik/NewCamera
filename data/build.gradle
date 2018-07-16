@@ -26,16 +26,17 @@ android {
 
 dependencies {
     implementation project(':domain')
+    api project(':analytic')
 
-    def dependency = rootProject.ext.dataDependencies
-
-    implementation dependency.javaxInject
-    implementation dependency.okHttp
-    implementation dependency.gson
-    implementation dependency.gsonConverter
-    implementation dependency.rxJava
-    implementation dependency.rxAndroid
-    implementation dependency.retrofit
-    implementation dependency.retrofitAdapter
-    implementation dependency.timber
+    def dataDependency = rootProject.ext.dataDependencies
+    implementation dataDependency.kotlin
+    implementation dataDependency.javaxInject
+    implementation dataDependency.okHttp
+    implementation dataDependency.gson
+    implementation dataDependency.gsonConverter
+    implementation dataDependency.rxJava
+    implementation dataDependency.rxAndroid
+    implementation dataDependency.retrofit
+    implementation dataDependency.retrofitAdapter
+    implementation dataDependency.timber
 }

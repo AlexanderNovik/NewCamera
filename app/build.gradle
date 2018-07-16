@@ -33,6 +33,8 @@ dependencies {
     def uiDependencies = rootProject.ext.uiDependencies
 
     implementation project(':presentation')
+    implementation project(':data')
+    implementation project(':domain')
 
     implementation uiDependencies.kotlin
     // di
