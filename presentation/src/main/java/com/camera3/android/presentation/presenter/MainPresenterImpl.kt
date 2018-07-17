@@ -1,7 +1,6 @@
-package com.camera3.android.presentation
+package com.camera3.android.presentation.presenter
 
 import com.camera3.android.domain.interaction.analytics.SendAppStartEvent
-import com.camera3.android.presentation.main.MainPresenter
 import io.reactivex.Scheduler
 import timber.log.Timber
 import javax.inject.Inject
@@ -11,8 +10,6 @@ class MainPresenterImpl @Inject constructor(
         @Named("jobScheduler") private val jobScheduler: Scheduler,
         @Named("uiScheduler") private val uiScheduler: Scheduler,
         private val sendAppStartEvent: SendAppStartEvent) : MainPresenter {
-    override fun init() {
-    }
 
     override fun start() {
         sendAppStartEvent.execute(emptyMap())
@@ -24,11 +21,4 @@ class MainPresenterImpl @Inject constructor(
                     Timber.d("Error ${it.message}")
                 })
     }
-
-    override fun stop() {
-    }
-
-    override fun destroy() {
-    }
-
 }

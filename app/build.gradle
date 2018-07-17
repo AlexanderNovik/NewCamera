@@ -55,4 +55,8 @@ dependencies {
     implementation uiDependencies.rxPermissions
     // constraint
     implementation uiDependencies.constraint
+    // mvp
+    implementation uiDependencies.moxy
+    implementation uiDependencies.moxyAppCompat
+    kapt uiDependencies.moxyCompiler
 }

@@ -1,8 +1,8 @@
 package com.camera3.android.application.di
 
 import com.camera3.android.domain.interaction.analytics.SendAppStartEvent
-import com.camera3.android.presentation.MainPresenterImpl
-import com.camera3.android.presentation.main.MainPresenter
+import com.camera3.android.presentation.presenter.MainPresenter
+import com.camera3.android.presentation.presenter.MainPresenterImpl
 import dagger.Module
 import dagger.Provides
 import io.reactivex.Scheduler

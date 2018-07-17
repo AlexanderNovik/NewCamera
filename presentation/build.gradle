@@ -40,4 +40,9 @@ dependencies {
     implementation presentationDependencies.timber
     // permissions
     implementation presentationDependencies.rxPermissions
+    // mvp
+    implementation presentationDependencies.moxy
+    implementation presentationDependencies.moxyAppCompat
+    kapt presentationDependencies.moxyCompiler
+
 }

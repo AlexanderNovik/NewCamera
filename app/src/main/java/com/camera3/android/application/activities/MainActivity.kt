@@ -1,13 +1,15 @@
 package com.camera3.android.application.activities
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.camera3.android.application.R
-import com.camera3.android.presentation.main.MainPresenter
+import com.camera3.android.presentation.presenter.MainPresenter
+import com.camera3.android.presentation.view.MainView
 import dagger.android.AndroidInjection
 import javax.inject.Inject
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity(), MainView {
+    override fun doSomethingForExample() {
+    }
 
     @Inject lateinit var presenter: MainPresenter
 
@@ -20,9 +22,5 @@ class MainActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         presenter.start()
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
     }
 }

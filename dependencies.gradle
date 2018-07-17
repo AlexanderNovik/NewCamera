@@ -31,6 +31,8 @@ ext {
     amplitudeVersion = '2.18.1'
     appsflyerVersion = '4.8.12@aar'
     facebookVersion = '4.33.0'
+    // mvp
+    moxyVersion = '1.5.5'
 
     //tests
     androidTestVersion = '0.5'
@@ -49,23 +51,29 @@ ext {
             rxPermissions  : "com.tbruyelle.rxpermissions2:rxpermissions:$rxPermissionsVersion",
             constraint     : 'com.android.support.constraint:constraint-layout:1.1.0',
             javaxInject    : "javax.inject:javax.inject:$javaInjectVersion",
+            moxy           : "com.arello-mobile:moxy:$moxyVersion",
+            moxyAppCompat  : "com.arello-mobile:moxy-app-compat:$moxyVersion",
+            moxyCompiler   : "com.arello-mobile:moxy-compiler:$moxyVersion",
             kotlin         : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     ]
 
     presentationDependencies = [
-            daggerCompiler : "com.google.dagger:dagger-compiler:$daggerVersion",
-            dagger         : "com.google.dagger:dagger:$daggerVersion",
-            rxJava         : "io.reactivex.rxjava2:rxjava:$rxJavaVersion",
-            rxAndroid      : "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion",
-            rxKotlin       : "io.reactivex.rxjava2:rxkotlin:$rxKotlinVersion",
-            appCompat      : "com.android.support:appcompat-v7:$supportVersion",
-            design         : "com.android.support:design:$supportVersion",
-            timber         : "com.jakewharton.timber:timber:$timberVersion",
-            rxPermissions  : "com.tbruyelle.rxpermissions2:rxpermissions:$rxPermissionsVersion",
-            constraint     : 'com.android.support.constraint:constraint-layout:1.1.0',
-            glide          : "com.github.bumptech.glide:glide:$glideVersion",
-            javaxInject    : "javax.inject:javax.inject:$javaInjectVersion",
-            kotlin         : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+            daggerCompiler: "com.google.dagger:dagger-compiler:$daggerVersion",
+            dagger        : "com.google.dagger:dagger:$daggerVersion",
+            rxJava        : "io.reactivex.rxjava2:rxjava:$rxJavaVersion",
+            rxAndroid     : "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion",
+            rxKotlin      : "io.reactivex.rxjava2:rxkotlin:$rxKotlinVersion",
+            appCompat     : "com.android.support:appcompat-v7:$supportVersion",
+            design        : "com.android.support:design:$supportVersion",
+            timber        : "com.jakewharton.timber:timber:$timberVersion",
+            rxPermissions : "com.tbruyelle.rxpermissions2:rxpermissions:$rxPermissionsVersion",
+            constraint    : 'com.android.support.constraint:constraint-layout:1.1.0',
+            glide         : "com.github.bumptech.glide:glide:$glideVersion",
+            javaxInject   : "javax.inject:javax.inject:$javaInjectVersion",
+            moxy          : "com.arello-mobile:moxy:$moxyVersion",
+            moxyAppCompat : "com.arello-mobile:moxy-app-compat:$moxyVersion",
+            moxyCompiler  : "com.arello-mobile:moxy-compiler:$moxyVersion",
+            kotlin        : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     ]
 
     domainDependencies = [
